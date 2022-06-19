@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import classes from './NewMeetupForm.module.css';
 import Card from '/Users/mehmetakifturker/Documents/Projects/learning process/Acedemimind-react-course/meetup/src/components/ui/card.js';
-function NewMeetupForm() {
+function NewMeetupForm(props) {
     
     const titleInputRef = useRef();
     const imageInputRef = useRef();
@@ -22,7 +22,8 @@ function NewMeetupForm() {
             description: enteredDescritption
 
         };
-        console.log(meetupData);
+        props.onAddMeetup(meetupData); // this is the function that we passed from the parent component
+
     }
 
     return (
